@@ -5,3 +5,4 @@ The repository for Big Data Mining course.
 *Add bonus 1*  
 *Saturday, 02. June 2018*  
 *Add homework 2*  
+*Add homework 3*  
