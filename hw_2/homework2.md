@@ -1,30 +1,48 @@
-# Big Data Mining - Bonus #1  
+# Big Data Mining - Homework #2  
 
 **Note:**  
 
-- In this question set, Chicago crime data is used, a copy of the data can be downloaded from [here](https://data.cityofchicago.org/Public-Safety/Crimes-2001-to-present/ijzp-q8t2). Make sure to have the csv file so as to use the code.  
+- In this question set, News Popularity in Multiple Social Media Platforms Data Set  is used, a copy of the data can be downloaded from [here](https://archive.ics.uci.edu/ml/datasets/News+Popularity+in+Multiple+Social+Media+Platforms). Make sure to have all the csv file.  
   
 **Data description:**  
-The file News_Final.csv contains 12 attributes.
-```
--0,----------1,---2,----3,---4,
-ID,Case Number,Date,Block,IUCR,
------------5,----------6,-------------------7,-----8,-------9,
-Primary Type,Description,Location Description,Arrest,Domestic,
---10,------11,--12,------------13,------14,
-Beat,District,Ward,Community Area,FBI Code,
-----------15,----------16,--17,--------18,------19,
-X Coordinate,Y Coordinate,Year,Updated On,Latitude,
--------20,------21
-Longitude,Location
-```
-  
+The news data file News_Final.csv contains 11 attributes.
+```  
+-------0,------1,---------2,-------3,------4,  
+"IDLink","Title","Headline","Source","Topic",  
+------------5,---------------6,------------------7,---------8,-----------9,  
+"PublishDate","SentimentTitle","SentimentHeadline","Facebook","GooglePlus",  
+--------10  
+"LinkedIn"  
+```  
+- IDLink: Unique identifier of news items  
+- Title: Title of the news item according to the official media sources  
+- Headline: Headline of the news item according to the official media sources  
+- Source: Original news outlet that published the news item 
+- Topic: Query topic used to obtain the items in the official media sources  
+- PublishDate: Date and time of the news items' publication 
+- SentimentTitle: Sentiment score of the text in the news items' title  
+- SentimentHeadline: Sentiment score of the text in the news items' headline  
+- Facebook: Final value of the news items' popularity according to the social media source Facebook  
+- GooglePlus: Final value of the news items' popularity according to the social media source Google+  
+- LinkedIn: Final value of the news items' popularity according to the social media source LinkedIn  
+
+Social feedback data (4 topics on 3 platforms)  
+```  
+-------0,----1,----2,...,----144
+"IDLink","TS1","TS2",...,"TS144"
+```  
+- IDLink: Unique identifier of news items  
+- TS1: Level of popularity in time slice 1 (0-20 minutes upon publication)  
+- TS2: Level of popularity in time slice 2 (20-40 minutes upon publication)  
+...   
+- TS144 (numeric): Final level of popularity after 2 days upon publication  
+
 **Question:**  
 
-1. For the attributes  **'Primary type'** and **'Location description'**, output the list of each value and the corresponding frequency count, sorted in descending order of the count, respectively.  
+1. In news data, count the words in two fields: **'Title'** and **'Headline'** respectively, and list the most frequent words according to the term frequency in descending order, in total, per day, and per topic, respectively.  
   
-2. Output the most frequently occurred **'Primary type'** for each possible value of **'Location description'**, sorted in descending order of the frequency count.  
+2. In social feedback data, calculate the average popularity of each news by hour, and by day, respectively (for each platform).  
 
-3. Output the most frequently occurred street name in the attribute **'Block'** for each **'Primary type'**, sorted in descending order of the frequency count. (You should remove the numbers in the 'Block' address of a street/avenue/boulevard)  
+3. In news data, calculate the sum and average sentiment score of each topic, respectively.  
 
-4. From the attribute **'Date'**, extract the time in hours and output the most frequently occurred hour for each **'Primary type'** and ‘Location description', sorted in descending order of the frequency count, respectively.  
+4. From subtask (i), for the top-100 frequent words per topic in titles and headlines, calculate their co-occurrence matrices (100x100), respectively. Each entry in the matrix will contain the co-occurrence frequency in all news titles and headlines, respectively.  
