@@ -10,7 +10,7 @@ The repository for Big Data Mining course.
 *Upload homework 3*  
   
 *Friday, 08. June 2018*  
-*Upload homework 5* 
+*Upload homework 5*  
   
-*Wednesday, 13. June 2018*
-*Refactor homework1* 
+*Wednesday, 13. June 2018*  
+*Refactor homework1*  
